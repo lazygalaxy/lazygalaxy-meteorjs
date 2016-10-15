@@ -1,5 +1,6 @@
 import React from 'react'
 import NavLink from '../NavLink'
+import Section from '../Section'
 
 export default React.createClass({
     contextTypes: {
@@ -16,26 +17,28 @@ export default React.createClass({
 
     render() {
         return (
-            <div>
-                <h2>Repos</h2>
-                <ul>
-                    <li>
-                        <NavLink to="/recipe/repos/reactjs/react-router">React Router</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/recipe/repos/facebook/react">React</NavLink>
-                    </li>
-                    <li>
-                        <form onSubmit={this.handleSubmit}>
-                            <input type="text" placeholder="userName"/>
-                            / {' '}
-                            <input type="text" placeholder="repo"/>{' '}
-                            <button type="submit">Go</button>
-                        </form>
-                    </li>
-                </ul>
-                {this.props.children}
-            </div>
+            <Section id="repos">
+                <div className="row">
+                    <h2>Repos</h2>
+                    <ul>
+                        <li>
+                            <NavLink to="/recipe/repos/reactjs/react-router">React Router</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/recipe/repos/facebook/react">React</NavLink>
+                        </li>
+                        <li>
+                            <form onSubmit={this.handleSubmit}>
+                                <input type="text" placeholder="userName"/>
+                                / {' '}
+                                <input type="text" placeholder="repo"/>{' '}
+                                <button type="submit">Go</button>
+                            </form>
+                        </li>
+                    </ul>
+                    {this.props.children}
+                </div>
+            </Section>
         )
     }
 })

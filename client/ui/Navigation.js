@@ -5,12 +5,20 @@ export default class Navigation extends React.Component {
     //render functions
     _renderSections() {
         return this.props.sections.map((section) => {
-            return (
-                <li>
-                    <a className="page-scroll" href={section.link}>{section.label}</a>
-                </li>
-            );
-        });
+            if (section.link.startsWith('#'))
+                return (
+                    <li>
+                        <a className="page-scroll" href={section.link}>{section.label}</a>
+                    </li>
+                );
+            else
+                return (
+                    <li>
+                        <NavLink to={section.link}>{section.label}</NavLink>
+                    </li>
+                );
+            }
+        );
     }
 
     render() {
@@ -48,10 +56,12 @@ export default class Navigation extends React.Component {
         )
     }
 }
+
 Navigation.propTypes = {
     title: React.PropTypes.string.isRequired,
     sections: React.PropTypes.array.isRequired
 };
+
 Navigation.Section = class {
     constructor(label, link) {
         this.label = label;

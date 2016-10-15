@@ -1,7 +1,12 @@
 import React from 'react'
+import Section from '../Section'
 
 export default React.createClass({
     render() {
-        return <div>About</div>
+        return (
+            <Section id="about">
+                About Recipe
+            </Section>
+        )
     }
 })
