@@ -5,9 +5,9 @@ import Navigation from '../Navigation'
 export default React.createClass({
     render() {
         let sections = [
-            new Navigation.Section("About", "/recipe/about"),
-            new Navigation.Section("Repos", "/recipe/repos"),
-            new Navigation.Section("LazyGalaxy", "/")
+            new Navigation.Section("about", "About", "/recipe/about"),
+            new Navigation.Section("repos", "Repos", "/recipe/repos"),
+            new Navigation.Section("lazygalaxy", "LazyGalaxy", "/")
         ];
 
         return (

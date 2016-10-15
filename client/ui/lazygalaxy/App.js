@@ -13,19 +13,23 @@ import Footer from './Footer'
 
 export default React.createClass({
     render() {
+        let serviceSectionId = "services";
+        let portfolioSectionId = "portfolio";
+        let aboutSectionId = "about";
+
         let sections = [
-            new Navigation.Section("Services", "#services"),
-            new Navigation.Section("Portfolio", "#portfolio"),
-            new Navigation.Section("About", "#about")
+            new Navigation.Section(serviceSectionId, "Services"),
+            new Navigation.Section(portfolioSectionId, "Portfolio"),
+            new Navigation.Section(aboutSectionId, "About")
         ];
 
         return (
             <div>
                 <Navigation title="LazyGalaxy" sections={sections}/>
                 <Home/>
-                <Services/>
-                <Portfolio/>
-                <About/>
+                <Services sectionId={serviceSectionId}/>
+                <Portfolio sectionId={portfolioSectionId}/>
+                <About sectionId={aboutSectionId}/>
                 <Footer/>
             </div>
         )

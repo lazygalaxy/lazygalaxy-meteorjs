@@ -17,7 +17,7 @@ export default React.createClass({
 
     render() {
         return (
-            <Section id="repos">
+            <Section {...this.props}>
                 <div className="row">
                     <h2>Repos</h2>
                     <ul>

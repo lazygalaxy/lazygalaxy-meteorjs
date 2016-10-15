@@ -3,7 +3,7 @@ import React from 'react'
 export default class Section extends React.Component {
     render() {
         return (
-            <section id={this.props.id} className="bg-light-gray">
+            <section id={this.props.sectionId} className="bg-light-gray">
                 <div className="container">
                     {this.props.children}
                 </div>
@@ -13,5 +13,5 @@ export default class Section extends React.Component {
 }
 
 Section.propTypes = {
-    id: React.PropTypes.string.isRequired
+    sectionId: React.PropTypes.string
 };

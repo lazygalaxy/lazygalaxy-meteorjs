@@ -4,7 +4,7 @@ import Section from '../Section'
 export default React.createClass({
     render() {
         return (
-            <Section id="services">
+            <Section {...this.props}>
                 <div className="row">
                     <div className="col-lg-12 text-center">
                         <h2 className="section-heading">Services</h2>
