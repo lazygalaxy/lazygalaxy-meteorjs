@@ -13,7 +13,7 @@ export default React.createClass({
                     </div>
                     <div className="row">
                         <div className="col-md-4 col-sm-6 portfolio-item">
-                            <a href="http://www.gopredict.com" className="portfolio-link" data-toggle="modal">
+                            <a href="/recipe" className="portfolio-link" data-toggle="modal">
                                 <div className="portfolio-hover">
                                     <div className="portfolio-hover-content">
                                         <i className="fa fa-link fa-3x"></i>

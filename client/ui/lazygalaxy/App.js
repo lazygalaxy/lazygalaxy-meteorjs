@@ -1,6 +1,10 @@
 import React from 'react'
+
+//shared components
 import NavLink from '../NavLink'
-import Navigation from './Navigation'
+import Navigation from '../Navigation'
+
+//lazygalaxy components
 import Home from './Home'
 import Services from './Services'
 import Portfolio from './Portfolio'
@@ -9,25 +13,20 @@ import Footer from './Footer'
 
 export default React.createClass({
     render() {
+        let sections = [
+            new Navigation.Section("Services", "#services"),
+            new Navigation.Section("Portfolio", "#portfolio"),
+            new Navigation.Section("About", "#about")
+        ];
+
         return (
             <div>
-                <Navigation/>
+                <Navigation title="LazyGalaxy" sections={sections}/>
                 <Home/>
                 <Services/>
                 <Portfolio/>
                 <About/>
-                <Footer/> {/* <ul role="nav">
-                    <li>
-                        <NavLink to="/" onlyActiveOnIndex>Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about">About</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/recipe">Recipe App</NavLink>
-                    </li>
-                </ul>
-                {this.props.children} */}
+                <Footer/>
             </div>
         )
     }

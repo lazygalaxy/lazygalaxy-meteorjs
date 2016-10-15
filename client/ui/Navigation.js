@@ -1,6 +1,18 @@
 import React from 'react'
+import NavLink from './NavLink'
 
-export default React.createClass({
+export default class Navigation extends React.Component {
+    //render functions
+    _renderSections() {
+        return this.props.sections.map((section) => {
+            return (
+                <li>
+                    <a className="page-scroll" href={section.link}>{section.label}</a>
+                </li>
+            );
+        });
+    }
+
     render() {
         //should be added to css
         var divStyle = {
@@ -19,7 +31,7 @@ export default React.createClass({
                             <span className="icon-bar"></span>
                         </button>
                         <a href="#page-top" className="navbar-left"><img src="logo.png" style={divStyle}/></a>
-                        <a className="navbar-brand page-scroll" href="#page-top">LazyGalaxy</a>
+                        <a className="navbar-brand page-scroll" href="#page-top">{this.props.title}</a>
                     </div>
 
                     {/* Collect the nav links, forms, and other content for toggling */}
@@ -28,19 +40,21 @@ export default React.createClass({
                             <li className="hidden">
                                 <a href="#page-top"></a>
                             </li>
-                            <li>
-                                <a className="page-scroll" href="#services">Services</a>
-                            </li>
-                            <li>
-                                <a className="page-scroll" href="#portfolio">Portfolio</a>
-                            </li>
-                            <li>
-                                <a className="page-scroll" href="#about">About</a>
-                            </li>
+                            {this._renderSections()}
                         </ul>
                     </div>
                 </div>
             </nav>
         )
     }
-})
+}
+Navigation.propTypes = {
+    title: React.PropTypes.string.isRequired,
+    sections: React.PropTypes.array.isRequired
+};
+Navigation.Section = class {
+    constructor(label, link) {
+        this.label = label;
+        this.link = link;
+    }
+}
