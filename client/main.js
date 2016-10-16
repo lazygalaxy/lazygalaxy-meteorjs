@@ -3,11 +3,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 
-//import react components
-import App from './ui/lazygalaxy/App';
-import Home from './ui/lazygalaxy/Home';
-import About from './ui/lazygalaxy/About';
+//import lazygalaxy components
+import LazyGalaxyApp from './ui/lazygalaxy/App';
 
+//import recipe components
 import RecipeApp from './ui/recipe/App';
 import RecipeHome from './ui/recipe/Home';
 import RecipeAbout from './ui/recipe/About';
@@ -42,9 +41,8 @@ $('.navbar-collapse ul li a').click(function() {
 Meteor.startup(() => {
     render((
         <Router history={browserHistory}>
-            <Route path="/" component={App}>
-                <Route path="/about" component={About}/>
-            </Route>
+            <Route path="/" component={LazyGalaxyApp}/>
+
             <Route path="/recipe" component={RecipeApp}>
                 <IndexRoute component={RecipeHome}/>
                 <Route path="/recipe/about" component={RecipeAbout}/>

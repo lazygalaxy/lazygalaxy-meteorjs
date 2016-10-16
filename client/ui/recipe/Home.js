@@ -4,7 +4,7 @@ import Section from '../Section'
 export default React.createClass({
     render() {
         return (
-            <Section {...this.props}>
+            <Section sectionId="home">
                 <div className="row">
                     Recipe Home
                 </div>

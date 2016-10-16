@@ -12,9 +12,7 @@ export default React.createClass({
 
         return (
             <div>
-                <Navigation title="Recipe" sections={sections}/>
-
-                <ul role="nav">
+                <Navigation title="Recipe" sections={sections}/> {/* <ul role="nav">
                     <li>
                         <NavLink to="/recipe" onlyActiveOnIndex>Home</NavLink>
                     </li>
@@ -27,7 +25,7 @@ export default React.createClass({
                     <li>
                         <NavLink to="/">LazyGalaxy</NavLink>
                     </li>
-                </ul>
+                </ul> */}
                 {this.props.children}
             </div>
         )

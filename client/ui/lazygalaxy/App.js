@@ -6,30 +6,24 @@ import Navigation from '../Navigation'
 
 //lazygalaxy components
 import Home from './Home'
-import Services from './Services'
-import Portfolio from './Portfolio'
-import About from './About'
+import ServicesSection from './ServicesSection'
+import PortfolioSection from './PortfolioSection'
+import AboutSection from './AboutSection'
 import Footer from './Footer'
 
 export default React.createClass({
     render() {
-        let serviceSectionId = "services";
-        let portfolioSectionId = "portfolio";
-        let aboutSectionId = "about";
-
-        let sections = [
-            new Navigation.Section(serviceSectionId, "Services"),
-            new Navigation.Section(portfolioSectionId, "Portfolio"),
-            new Navigation.Section(aboutSectionId, "About")
-        ];
+        let serviceSection = new Navigation.Section("services", "Services");
+        let portfolioSection = new Navigation.Section("portfolio", "Portfolio");
+        let aboutSection = new Navigation.Section("about", "About");
 
         return (
             <div>
-                <Navigation title="LazyGalaxy" sections={sections}/>
+                <Navigation title="LazyGalaxy" sections={[serviceSection, portfolioSection, aboutSection]}/>
                 <Home/>
-                <Services sectionId={serviceSectionId}/>
-                <Portfolio sectionId={portfolioSectionId}/>
-                <About sectionId={aboutSectionId}/>
+                <ServicesSection sectionId={serviceSection.id}/>
+                <PortfolioSection sectionId={portfolioSection.id}/>
+                <AboutSection sectionId={aboutSection.id}/>
                 <Footer/>
             </div>
         )
